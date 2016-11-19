@@ -22,28 +22,28 @@ local function plugin_exists( name )
 end
 
 local function list_all_plugins(only_enabled)
-  local tmp = '\n\n@BeyondTeam'
+  local tmp = '\n\n'
   local text = ''
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  ✔ enabled, ❌ disabled
-    local status = '/Disable➣'
+    local status = '[Disable]'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '/Enable➣' 
+        status = '[Enable]' 
       end
       nact = nact+1
     end
-    if not only_enabled or status == '/Enable➣' then
+    if not only_enabled or status == '[Enable]' then
       -- get the name
       v = string.match (v, "(.*)%.lua")
       text = text..nsum..'.'..status..' '..v..' \n'
     end
   end
-  local text = text..'\n\n'..nsum..' plugins installed\n\n'..nact..' plugins enabled\n\n'..nsum-nact..' plugins disabled'..tmp
+  local text = text..'\n'..nsum..' plugins installed\n'..nact..' plugins enabled\n'..nsum-nact..' plugins disabled'..tmp
   return text
 end
 
@@ -52,13 +52,13 @@ local function list_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  ✔ enabled, ❌ disabled
-    local status = '/Disable➣'
+    local status = '[Disable]'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '/Enable➣' 
+        status = '[Enable]' 
       end
       nact = nact+1
     end
@@ -68,7 +68,7 @@ local function list_plugins(only_enabled)
      -- text = text..v..'  '..status..'\n'
     end
   end
-  local text = text.."\nAll Plugins Reloaded\n\n"..nact.." Plugins Enabled\n"..nsum.." Plugins Installed\n\n@BeyondTeam"
+  local text = text.."\nAll Plugins Reloaded\n"..nact.." Plugins Enabled\n"..nsum.." Plugins Installed"
 return text
 end
 
@@ -197,7 +197,7 @@ local function run(msg, matches)
   if matches[1] == '*' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return reload_plugins(true)
   end
-  if matches[1]:lower() == 'reload' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1]:lower() == 'r' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return reload_plugins(true)
   end
 end
@@ -216,13 +216,13 @@ return {
           "!pl * : reloads all plugins." },
           },
   patterns = {
-    "^!plist$",
-    "^!pl? (+) ([%w_%.%-]+)$",
-    "^!pl? (-) ([%w_%.%-]+)$",
-    "^!pl? (+) ([%w_%.%-]+) (chat)",
-    "^!pl? (-) ([%w_%.%-]+) (chat)",
-    "^!pl? (*)$",
-    "^[!/](reload)$"
+    "^[Pp]$",
+    "^[Pp]? (+) ([%w_%.%-]+)$",
+    "^[Pp]? (-) ([%w_%.%-]+)$",
+    "^[Pp]? (+) ([%w_%.%-]+) (chat)",
+    "^[Pp]? (-) ([%w_%.%-]+) (chat)",
+    "^[Pp]? (*)$",
+    "^[Rr]$"
     },
   run = run,
   moderated = true, -- set to moderator mode
