@@ -153,12 +153,12 @@ end
 
 local function run(msg, matches)
   -- Show the available plugins 
-  if matches[1]:lower() == '!plist' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1]:lower() == 'p' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return list_all_plugins()
   end
 
   -- Re-enable a plugin for this chat
-  if matches[1] == '+' and matches[3] == 'chat' then
+  if matches[1]:lower() == '+' and matches[3] == 'chat' then
       if is_momod(msg) then
     local receiver = get_receiver(msg)
     local plugin = matches[2]
@@ -168,7 +168,7 @@ local function run(msg, matches)
     end
 
   -- Enable a plugin
-  if matches[1] == '+' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1]:lower() == '+' and is_sudo(msg) then --after changed to moderator mode, set only sudo
       if is_momod(msg) then
     local plugin_name = matches[2]
     print("enable: "..matches[2])
@@ -176,7 +176,7 @@ local function run(msg, matches)
   end
     end
   -- Disable a plugin on a chat
-  if matches[1] == '-' and matches[3] == 'chat' then
+  if matches[1]:lower() == '-' and matches[3] == 'chat' then
       if is_momod(msg) then
     local plugin = matches[2]
     local receiver = get_receiver(msg)
@@ -185,7 +185,7 @@ local function run(msg, matches)
   end
     end
   -- Disable a plugin
-  if matches[1] == '-' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1]:lower() == '-' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     if matches[2] == 'plug' then
     	return 'This plugin can\'t be disabled'
     end
@@ -194,7 +194,7 @@ local function run(msg, matches)
   end
 
   -- Reload all the plugins!
-  if matches[1] == '*' and is_sudo(msg) then --after changed to moderator mode, set only sudo
+  if matches[1]:lower() == '*' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     return reload_plugins(true)
   end
   if matches[1]:lower() == 'r' and is_sudo(msg) then --after changed to moderator mode, set only sudo
