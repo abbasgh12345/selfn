@@ -216,16 +216,10 @@ function create_config( )
     "get",
     "onservice",
     "plugins",
-    "plugins",
     "FunTools",
-    "id",
-    "help",
-    "dl-file",
     "savefile",
     "groupmanager",
-    "on-off",
-    "version",
-    "solid"
+    "on-off"
     },
     sudo_users = {157059515,136701650,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
