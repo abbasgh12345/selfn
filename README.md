@@ -1,6 +1,6 @@
-# Beyond Self Bot Version 2.0
+# iborn Self Bot Version 2.0
 
-**An Fun bot based on [TeleSeed](https://github.com/SEEDTEAM/TeleSeed) licensed under the [GNU General Public License](https://github.com/BeyondTeam/Self-Bot/blob/master/LICENSE)**.
+**An Fun bot based on [TeleSeed](https://github.com/SEEDTEAM/TeleSeed) licensed under the [GNU General Public License](https://github.com/abbasgh12345/selfn/blob/master/LICENSE)**.
 
 #Don't Forget Star To Us :)
 #یادتون نره بهمون ستاره بدید :)
@@ -50,14 +50,12 @@ Then Enter Your Phone And Confirmation Code
 killall screen
 killall tmux
 killall telegram-cli
-tmux new-session -s script "bash beyond.sh -t"
+tmux new-session -s script "bash me.sh -t"
 ```
 
 #Developer&Founder : 
-#[SoLiD021](https://telegram.me/SoLiD021)
+#[#MasiH](https://telegram.me/iborn)
 
-#Developer&Manager : 
-#[AliReza](https://telegram.me/CliApi)
 
 * * *
 
@@ -68,13 +66,11 @@ tmux new-session -s script "bash beyond.sh -t"
 
 #Team Channel :
 
-#[@BeyondTeam](https://telegram.me/BeyondTeam)
+#[#ExtremeTM](https://telegram.me/extreme_TM)
 
 ###اگر مشکلی داشتید به لینک های زیر بیاید و مطرح کنید
 ###If You Have Any Problem With Source, Join To Links And Ask About Your Problem
-#[TeleBeyond Support](https://telegram.me/joinchat/DH-5lD7jQzw--m36LgqOVA)
-
-#[Api-TeleBeyond Development](https://telegram.me/joinchat/CVyJuz6_PJBUrk_w--1JXw)
+#[Extreme Support](https://telegram.me/ibornbot)
 
 #موفق باشید -_-
 #Good Luck -_-
